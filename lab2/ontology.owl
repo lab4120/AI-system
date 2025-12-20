@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#"
+     xml:base="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Онтология предметной области: Машинное обучение и нейронные сети</rdfs:comment>
+    </owl:Ontology>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#appliedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#appliedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain"/>
+        <rdfs:comment>Связывает модель с областью применения</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#evaluatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric"/>
+        <rdfs:comment>Связывает модель с метрикой оценки</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasActivationFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasActivationFunction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Layer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ActivationFunction"/>
+        <rdfs:comment>Связывает слой с функцией активации</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasAlgorithm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasAlgorithm">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:comment>Связывает модель с алгоритмом</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasLayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasLayer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Layer"/>
+        <rdfs:comment>Связывает нейронную сеть со слоями</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#trainedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#trainedOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset"/>
+        <rdfs:comment>Связывает модель с набором данных для обучения</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#usedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#usedFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task"/>
+        <rdfs:comment>Связывает алгоритм с задачей</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasAccuracy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Точность модели (от 0.0 до 1.0)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasDatasetSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasDatasetSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Размер набора данных</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasEpochs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasEpochs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Количество эпох обучения (минимум 1)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasLearningRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasLearningRate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Скорость обучения (от 0.0 до 1.0)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#hasName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Имя сущности</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ActivationFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ActivationFunction">
+        <rdfs:comment>Функция активации нейронной сети</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain">
+        <rdfs:comment>Область применения модели</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ClassificationTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ClassificationTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task"/>
+        <rdfs:comment>Задача классификации</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ClusteringAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ClusteringAlgorithm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#UnsupervisedLearning"/>
+        <rdfs:comment>Алгоритм кластеризации</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVision -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVision">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain"/>
+        <rdfs:comment>Компьютерное зрение</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task"/>
+        <rdfs:comment>Задача компьютерного зрения</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ConvolutionalNeuralNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ConvolutionalNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork"/>
+        <rdfs:comment>Сверточная нейронная сеть (CNN)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset">
+        <rdfs:comment>Набор данных</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#DecisionTree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#DecisionTree">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TraditionalML"/>
+        <rdfs:comment>Дерево решений</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric">
+        <rdfs:comment>Метрика оценки модели</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#GenerativeAdversarialNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#GenerativeAdversarialNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork"/>
+        <rdfs:comment>Генеративно-состязательная сеть (GAN)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Layer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Layer">
+        <rdfs:comment>Слой нейронной сети</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#LongShortTermMemory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#LongShortTermMemory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#RecurrentNeuralNetwork"/>
+        <rdfs:comment>Долгая краткосрочная память (LSTM)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm">
+        <rdfs:comment>Алгоритм машинного обучения</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model">
+        <rdfs:comment>Модель машинного обучения</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NaturalLanguageProcessing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NaturalLanguageProcessing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain"/>
+        <rdfs:comment>Обработка естественного языка</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NaturalLanguageProcessingTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NaturalLanguageProcessingTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task"/>
+        <rdfs:comment>Задача обработки естественного языка</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupervisedLearning"/>
+        <rdfs:comment>Нейронная сеть</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#RecurrentNeuralNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#RecurrentNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork"/>
+        <rdfs:comment>Рекуррентная нейронная сеть (RNN)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#RegressionTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#RegressionTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task"/>
+        <rdfs:comment>Задача регрессии</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ReinforcementLearning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ReinforcementLearning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:comment>Обучение с подкреплением</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SpeechRecognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SpeechRecognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ApplicationDomain"/>
+        <rdfs:comment>Распознавание речи</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupervisedLearning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupervisedLearning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:comment>Обучение с учителем</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupportVectorMachine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupportVectorMachine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TraditionalML"/>
+        <rdfs:comment>Метод опорных векторов (SVM)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Task">
+        <rdfs:comment>Задача машинного обучения</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TestDataset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TestDataset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset"/>
+        <rdfs:comment>Тестовый набор данных</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainedModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainedModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Model"/>
+        <rdfs:comment>Обученная модель</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainingDataset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainingDataset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset"/>
+        <rdfs:comment>Обучающий набор данных</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TraditionalML -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TraditionalML">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#SupervisedLearning"/>
+        <rdfs:comment>Традиционные алгоритмы машинного обучения</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#UnsupervisedLearning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#UnsupervisedLearning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#MLAlgorithm"/>
+        <rdfs:comment>Обучение без учителя</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ValidationDataset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ValidationDataset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Dataset"/>
+        <rdfs:comment>Валидационный набор данных</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Accuracy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Accuracy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accuracy</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#BERT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#BERT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#NeuralNetwork"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BERT</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionDomain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionDomain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVision"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computer Vision</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#F1Score -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#F1Score">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F1-Score</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageClassification -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageClassification">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ClassificationTask"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image Classification</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageNet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageNet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainingDataset"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ImageNet</hasName>
+        <hasDatasetSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14000000</hasDatasetSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ObjectDetection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ObjectDetection">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionTask"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Object Detection</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Precision -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Precision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Precision</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Recall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Recall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#EvaluationMetric"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recall</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainedModel"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResNet50</hasName>
+        <hasAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.92</hasAccuracy>
+        <hasEpochs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</hasEpochs>
+        <hasAlgorithm rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Algorithm"/>
+        <trainedOn rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageNet"/>
+        <appliedIn rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionDomain"/>
+        <evaluatedBy rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Accuracy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Algorithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Algorithm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ConvolutionalNeuralNetwork"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResNet50 Algorithm</hasName>
+        <hasLearningRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.001</hasLearningRate>
+        <usedFor rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageClassification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Model -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Model">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#TrainedModel"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResNet50 Model</hasName>
+        <hasAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</hasAccuracy>
+        <hasEpochs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</hasEpochs>
+        <hasAlgorithm rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ResNet50Algorithm"/>
+        <trainedOn rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ImageNet"/>
+        <appliedIn rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#ComputerVisionDomain"/>
+        <evaluatedBy rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Accuracy"/>
+        <evaluatedBy rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Precision"/>
+        <evaluatedBy rdf:resource="http://www.semanticweb.org/lab2/ontologies/2024/ml-ontology#Recall"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17) https://github.com/owlcs/owlapi -->
+
